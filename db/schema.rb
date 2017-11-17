@@ -13,8 +13,13 @@
 ActiveRecord::Schema.define(version: 20171117053314) do
 
   create_table "destinations", force: :cascade do |t|
+    t.string "name"
+    t.string "image"
+    t.string "description"
+    t.integer "tag_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["tag_id"], name: "index_destinations_on_tag_id"
   end
 
   create_table "messages", force: :cascade do |t|
@@ -24,6 +29,8 @@ ActiveRecord::Schema.define(version: 20171117053314) do
   end
 
   create_table "tags", force: :cascade do |t|
+    t.string "title"
+    t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
