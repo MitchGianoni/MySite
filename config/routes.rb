@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   get '/messages/new' 		=> 'messages#new'
   post 'messages/create'	=> 'messages#create'
 
+  get '/tags'				=> 'tags#index'
+
 end
